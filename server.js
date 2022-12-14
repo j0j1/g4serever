@@ -36,7 +36,7 @@ app.use(express.static('./server/assets'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', express.static(__dirname + '/'));
-
+app.use(cors());
 app.get('/api/get_events', getEvents)
 app.get('/api/getg4team', getG4team);
 app.post('/api/auth/signin', postSignIn);
@@ -48,5 +48,5 @@ app.delete('/api/delete_team/:teamId', deleteTeam);
 
 const port = 8090;
 app.listen(port, () => {
-  console.log(`Example app listening on port 8090`)
+  console.log(`Example app listening on port ${port}`)
 })
