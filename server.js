@@ -48,5 +48,5 @@ app.delete('/api/delete_team/:teamId', deleteTeam);
 
 const port = 8090;
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port 8090`)
 })
