@@ -4,7 +4,7 @@ const app = express();
 const helmet = require("helmet");
 
 const corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "*"
 } 
 
 require("dotenv").config();
@@ -36,7 +36,7 @@ app.use(express.static('./server/assets'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', express.static(__dirname + '/'));
-app.use(cors());
+app.use(cors(corsOptions));
 app.get('/api/get_events', getEvents)
 app.get('/api/getg4team', getG4team);
 app.post('/api/auth/signin', postSignIn);
